@@ -1,0 +1,24 @@
+<section class="profile">
+  <article>
+    <img src="https://i.pinimg.com/236x/34/ed/c0/34edc01637abc9e85b9288cbed98e5ce--first-baby-pictures-baby-photos.jpg" alt="">
+    {{#if owner}}
+      <div>
+        <form action="">
+          <input type="text" name="username" id="" value="{{user.username}}">
+          <input type="email" name="email" id="" value="{{user.email}}">
+          <textarea name="bio" id="" rows="5">{{user.bio}}</textarea>
+          <input type="submit" value="guardale">
+        </form>
+      </div>
+    {{else}}
+      <div>
+        <h2>{{user.username}}</h2>
+        <h3>{{user.email}}</h3>
+        <p>{{user.bio}}</p>
+      </div>
+    {{/if}}
+  </article>
+  <article>
+    los posts
+  </article>
+</section>
