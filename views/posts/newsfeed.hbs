@@ -9,15 +9,18 @@
   </div>
   <article>
     {{#each posts}}
-      <div class="card">
+      
+        <div class="card">
         <p>
           <a href="/users/{{this.user.username}}">
             {{this.user.username}}
           </a>
+          <a href="/posts/detail/{{this._id}}">✚</a>
+          
         </p>        
         <img src="{{this.imageURL}}" alt="">
         <p>{{this.text}}</p>        
-      </div>
+      </div>      
     {{/each}}
   </article>
   </div>

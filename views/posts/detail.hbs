@@ -1,0 +1,28 @@
+<section class="post-detail">  
+  <article>
+    <div class="card">
+        <p>
+          <a href="/users/{{post.user.username}}">
+            {{post.user.username}}
+          </a>
+        </p>        
+        <img src="{{post.imageURL}}" alt="">
+        <p>{{post.text}}</p>        
+      </div>
+      {{#if owner}}
+      <form action="/posts/detail/{{post._id}}" method="post" enctype="multipart/form-data">
+        <textarea name="text" id="" rows="5" placeholder="que hay de nuevo??"></textarea>
+        <input type="file" name="image" id="">
+        <input type="submit" value="postea 😜">
+      </form>      
+      <button>
+         <a href="/posts/delete/{{post._id}}">Delete</a>
+      </button>
+            
+          
+      {{/if}}
+  </article>
+  <article>
+
+  </article>
+</section>

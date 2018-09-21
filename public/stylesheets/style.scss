@@ -43,6 +43,12 @@ input{
   border-radius: 3px;
   border: 1px solid rgba(0,0,0,.3);
 }
+button{
+  padding: 2%;  
+  width: 90%;
+  border-radius: 3px;
+  border: 1px solid rgba(0,0,0,.3);
+}
 input[type="submit"]{
   background: #000;
   color: #fff;
@@ -86,7 +92,24 @@ textarea{
 }
 
 
+/*********post detail***********/
 
+.post-detail article:nth-child(1){
+  padding: 2%;
+  width: 25%;
+  height: 90vh;
+  border-radius: 3px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.post-detail article:nth-child(1) img{
+  border-radius: 50%;
+  border: 1px solid #000;
+  width: 200px;
+  height: 200px;
+}
 
 /**********posts list************/
 .newsfeed{
@@ -110,7 +133,5 @@ textarea{
   width: 100%;
 }
 .card p{
-  padding: 0 3%;
-  
-
+  padding: 0 3%;  
 }
