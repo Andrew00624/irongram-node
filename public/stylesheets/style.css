@@ -89,6 +89,9 @@ textarea {
   width: 30%; }
 
 /*********post detail***********/
+.post-detail {
+  display: flex; }
+
 .post-detail article:nth-child(1) {
   padding: 2%;
   width: 25%;
@@ -97,6 +100,9 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center; }
+
+.post-detail article:nth-child(2) {
+  width: 60%; }
 
 /**********posts list************/
 .newsfeed {

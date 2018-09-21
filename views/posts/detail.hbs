@@ -23,6 +23,23 @@
       {{/if}}
   </article>
   <article>
-
+    <h2>Comments</h2>
+    <form action="/posts/detail/{{post._id}}/comments" method="post">
+      <textarea name="text" id="" rows="5" placeholder="coomenta este post"></textarea>
+      <input type="submit" value="comenta">
+    </form>
+    <div>
+      {{#each comments}}
+      <div class="card">
+        <p>
+          <a href="/users/{{this.user.username}}">
+            {{this.user.username}}
+          </a>
+        </p>
+        <p>{{this.text}}</p>
+      </div>
+        
+      {{/each}}
+    </div>
   </article>
 </section>

@@ -105,6 +105,10 @@ textarea{
 
 /*********post detail***********/
 
+.post-detail{
+  display: flex;
+}
+
 .post-detail article:nth-child(1){
   padding: 2%;
   width: 25%;
@@ -115,6 +119,10 @@ textarea{
   flex-direction: column;
   align-items: center;
 }
+.post-detail article:nth-child(2){
+  width: 60%;
+}
+
 
 
 /**********posts list************/

@@ -2,6 +2,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const postSchema = new Schema({
+  likeado:{
+    type:Boolean,
+    default:false
+  },
   text:String,
   imageURL:String,
   user:{

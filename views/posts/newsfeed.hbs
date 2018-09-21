@@ -8,18 +8,25 @@
     </form>
   </div>
   <article>
-    {{#each posts}}
-      
+    {{#each postitos}}      
         <div class="card">
         <p>
-          <a href="/users/{{this.user.username}}">
-            {{this.user.username}}
+          <a href="/users/{{this._doc.user.username}}">
+            {{this._doc.user.username}}
           </a>
-          <a href="/posts/detail/{{this._id}}">✚</a>
-          
+          <a href="/posts/detail/{{this._doc._id}}">✚</a>          
         </p>        
-        <img src="{{this.imageURL}}" alt="">
-        <p>{{this.text}}</p>        
+        <img src="{{this._doc.imageURL}}" alt="">
+        <p>
+          <span>{{this._doc.text}}</span>
+          <a href="/posts/like/{{this._doc._id}}">
+            {{#if this._doc.like}}
+            <button>Dislike</button>
+            {{else}}
+            <button>Like</button>
+            {{/if}}
+          </a>
+        </p>        
       </div>      
     {{/each}}
   </article>
