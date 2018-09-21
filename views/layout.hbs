@@ -9,6 +9,25 @@
 </head>
 <body>
 
+  <header>
+    <nav>
+      IRONGRAM
+    </nav>
+    <nav>
+      {{#if user}}
+      <a href="/users/{{user.username}}">{{user.username}}</a>
+      |
+      <a href="/logout">Salir a beber</a>
+      {{else}}
+      <a href="/login">Login</a>
+      |
+      <a href="/signup">Registration</a>
+      {{/if}}
+      
+
+    </nav>
+  </header>
+
   {{{body}}}
 
   <script src="/javascripts/script.js"></script>

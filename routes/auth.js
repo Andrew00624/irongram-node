@@ -5,6 +5,9 @@ const welcomeMail = require('../helpers/mailer').welcomeMail
 
 
 
+
+
+
 //signup
 router.get('/signup',(req, res, next)=>{
   res.render('auth/signup')
@@ -29,7 +32,15 @@ router.get('/login', (req, res, next)=>{
 
 router.post('/login', passport.authenticate('local'), (req, res, next)=>{
   const {username} = req.user
+  req.app.locals.user = req.user
+  
   res.redirect(`/users/${username}`)
+})
+
+router.get('/logout',(req, res, next)=>{
+  req.logOut()
+  req.app.locals.user = null
+  res.redirect('/login')
 })
 
 

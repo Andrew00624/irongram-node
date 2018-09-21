@@ -1,20 +1,25 @@
 <section class="profile">
   <article>
+    {{#if data.photoURL}}
+    <img src="{{data.photoURL}}" alt="">
+    {{else}}
     <img src="https://i.pinimg.com/236x/34/ed/c0/34edc01637abc9e85b9288cbed98e5ce--first-baby-pictures-baby-photos.jpg" alt="">
+    {{/if}}
     {{#if owner}}
       <div>
-        <form action="">
-          <input type="text" name="username" id="" value="{{user.username}}">
-          <input type="email" name="email" id="" value="{{user.email}}">
-          <textarea name="bio" id="" rows="5">{{user.bio}}</textarea>
+        <form action="/user/{{data.dataname}}" method="post" enctype="multipart/form-data">
+          <input type="text" name="username" id="" value="{{data.username}}">
+          <input type="email" name="email" id="" value="{{data.email}}">
+          <textarea name="bio" id="" rows="5">{{data.bio}}</textarea>
+          <input type="file" name="image">
           <input type="submit" value="guardale">
         </form>
       </div>
     {{else}}
       <div>
-        <h2>{{user.username}}</h2>
-        <h3>{{user.email}}</h3>
-        <p>{{user.bio}}</p>
+        <h2>{{data.dataname}}</h2>
+        <h3>{{data.email}}</h3>
+        <p>{{data.bio}}</p>
       </div>
     {{/if}}
   </article>
