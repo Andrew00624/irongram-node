@@ -10,11 +10,11 @@ router.get('/', (req, res, next)=>{
   Post.find().sort('-created_at').populate('user')
     .then(posts=>{
       
-      posts = posts.map(p=>{        
-        if(JSON.stringify(p.likes).includes(req.user._id))like=true
+      posts.map(p=>{        
+        if(JSON.stringify(p.likes).includes(req.user._id))p.like=true
+        else p.like=false
         return p
-      })   
-      console.log(postitos)
+      })         
       res.render('posts/newsfeed',{posts})
     }).catch(e=>{
       console.log(e)
