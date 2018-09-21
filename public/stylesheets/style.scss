@@ -1,11 +1,14 @@
-body {  
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;  
+*{
   box-sizing: border-box;
+}
+body {  
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;    
   margin: 0;
   padding: 0;
 }
 a {
   color: #00B7FF;
+  width: 100%;
 }
 
 /********navbar*********/
@@ -33,19 +36,15 @@ header nav a:hover{
 
 //forms
 
-form{
-  
- 
-}
 input{
   padding: 2%;  
-  width: 90%;
+  width: 100%;
   border-radius: 3px;
   border: 1px solid rgba(0,0,0,.3);
 }
 button{
   padding: 2%;  
-  width: 90%;
+  width: 100%;
   border-radius: 3px;
   border: 1px solid rgba(0,0,0,.3);
 }
@@ -55,9 +54,21 @@ input[type="submit"]{
 }
 textarea{
   padding: 2%;  
-  width: 90%;
+  width:100%;
   border-radius: 3px;
   border: 1px solid rgba(0,0,0,.3);
+}
+
+//auth section
+.auth{
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.auth div{
+  width: 50%;
 }
 
 
@@ -104,12 +115,7 @@ textarea{
   flex-direction: column;
   align-items: center;
 }
-.post-detail article:nth-child(1) img{
-  border-radius: 50%;
-  border: 1px solid #000;
-  width: 200px;
-  height: 200px;
-}
+
 
 /**********posts list************/
 .newsfeed{
@@ -127,11 +133,18 @@ textarea{
   width: 100%;  
   border: solid 1px rgba(0,0,0,.5);
   border-radius: 5px;
-  margin-bottom: 5px;
+  margin-top: 5px;
 }
 .card img{
   width: 100%;
 }
 .card p{
+  width: 100%;
   padding: 0 3%;  
+  display: flex;
+  justify-content: space-between;
+}
+
+.card a{
+  width: auto;
 }
