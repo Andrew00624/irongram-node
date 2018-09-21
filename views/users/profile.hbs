@@ -24,6 +24,16 @@
     {{/if}}
   </article>
   <article>
-    los posts
+    {{#each posts}}
+      <div class="card">
+        <p>
+          <a href="/users/{{this.user.username}}">
+            {{this.user.username}}
+          </a>
+        </p>        
+        <img src="{{this.imageURL}}" alt="">
+        <p>{{this.text}}</p>        
+      </div>
+    {{/each}}
   </article>
 </section>

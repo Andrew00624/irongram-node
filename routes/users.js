@@ -2,16 +2,19 @@ const router = require('express').Router()
 const User = require('../models/User')
 const uploadCloud = require('../helpers/cloudinary')
 //importar los posts
+const Post = require('../models/Post')
 
 router.get('/:username', (req, res, next)=>{
   const {username} = req.params
   User.findOne({username:username})
     .then(user=>{
-      let isOwner = false
-      if(req.user._id==user._id)isOwner=true
-      console.log(req.user._id)
-      console.log(user._id)
-      res.render('users/profile',{data:user,owner:isOwner})
+      Post.find({user:user._id}).sort('-created_at')
+        .then(posts=>{
+          let isOwner = false
+          if(req.user._id==user._id)isOwner=true      
+          res.render('users/profile',{data:user,owner:isOwner, posts:posts})
+        })
+      
     }).catch(error=>{
       res.redirect('/')
     })
