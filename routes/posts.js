@@ -10,25 +10,12 @@ router.get('/', (req, res, next)=>{
   Post.find().sort('-created_at').populate('user')
     .then(posts=>{
       
-      const postitos = posts.map(p=>{
-        p = Object.assign({},p)      
-        p._doc.like=false
-        const uID = ObjectId(req.user._id)
-
-        //if(p._doc.likes.includes(uID))p._doc.like=true
-        p._doc.likes.map(l=>{
-          l = ObjectId.toString(l)
-
-          console.log(l==req.user._id)
-          console.log(l)
-          console.log(req.user._id)
-          if(l==req.user._id)p._doc.like=true
-        })
-        
+      posts = posts.map(p=>{        
+        if(JSON.stringify(p.likes).includes(req.user._id))like=true
         return p
       })   
       console.log(postitos)
-      res.render('posts/newsfeed',{postitos})
+      res.render('posts/newsfeed',{posts})
     }).catch(e=>{
       console.log(e)
       //res.redirect('/')
