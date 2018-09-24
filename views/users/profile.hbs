@@ -7,7 +7,7 @@
     {{/if}}
     {{#if owner}}
       <div>
-        <form action="/user/{{data.dataname}}" method="post" enctype="multipart/form-data">
+        <form action="/users/{{data.username}}" method="post" enctype="multipart/form-data">
           <input type="text" name="username" id="" value="{{data.username}}">
           <input type="email" name="email" id="" value="{{data.email}}">
           <textarea name="bio" id="" rows="5">{{data.bio}}</textarea>
@@ -17,7 +17,7 @@
       </div>
     {{else}}
       <div>
-        <h2>{{data.dataname}}</h2>
+        <h2>{{data.username}}</h2>
         <h3>{{data.email}}</h3>
         <p>{{data.bio}}</p>
       </div>
